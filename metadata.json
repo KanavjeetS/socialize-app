@@ -1,0 +1,7 @@
+{
+  "name": "SOCIALIZE",
+  "description": "An activity-first social platform connecting users for real-world experiences with a focus on safety and intent.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}

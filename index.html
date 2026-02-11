@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>SOCIALIZE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            },
+            colors: {
+              royal: {
+                800: '#3f3f46', // Zinc 700
+                900: '#18181b', // Zinc 900 (Card Background)
+                950: '#09090b', // Zinc 950 (App Background)
+              },
+              brand: {
+                primary: '#f97316', // Orange 500
+                secondary: '#0ea5e9', // Sky 500
+                accent: '#ef4444', // Red 500
+                warm: '#eab308', // Yellow 500
+                teal: '#14b8a6', // Teal 500
+              }
+            },
+            boxShadow: {
+              'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.3)',
+              'glass-hover': '0 12px 40px 0 rgba(249, 115, 22, 0.15)', // Orange glow
+              'neon': '0 0 15px rgba(249, 115, 22, 0.4)', // Orange neon
+              'burst': '0 0 30px 10px rgba(249, 115, 22, 0.6)', // Orange burst
+            },
+            borderRadius: {
+              '2xl': '1rem',
+              '3xl': '1.5rem',
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.5s cubic-bezier(0.23, 1, 0.32, 1) forwards',
+              'slide-up': 'slideUp 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards',
+              'slide-in': 'slideIn 0.4s cubic-bezier(0.23, 1, 0.32, 1) forwards',
+              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'bounce-subtle': 'bounceSubtle 2s infinite',
+              'pop': 'pop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards',
+              'shimmer': 'shimmer 2s linear infinite',
+              'float-up': 'floatUp 0.5s cubic-bezier(0.23, 1, 0.32, 1) forwards',
+              'morph-btn': 'morphBtn 0.4s ease-in-out forwards',
+              'red-pulse': 'redPulse 1.5s ease-in-out infinite',
+              'pin-drop': 'pinDrop 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards',
+              'bounce-click': 'bounceClick 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              slideUp: {
+                '0%': { transform: 'translateY(40px)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' },
+              },
+              slideIn: {
+                '0%': { transform: 'translateX(20px)', opacity: '0' },
+                '100%': { transform: 'translateX(0)', opacity: '1' },
+              },
+              bounceSubtle: {
+                '0%, 100%': { transform: 'translateY(-3%)' },
+                '50%': { transform: 'translateY(0)' },
+              },
+              pop: {
+                '0%': { transform: 'scale(0.8)', opacity: '0' },
+                '100%': { transform: 'scale(1)', opacity: '1' },
+              },
+              shimmer: {
+                '0%': { backgroundPosition: '-200% 0' },
+                '100%': { backgroundPosition: '200% 0' },
+              },
+              floatUp: {
+                '0%': { transform: 'translateY(10px)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' },
+              },
+              morphBtn: {
+                '0%': { width: '100%' },
+                '100%': { width: '3.5rem', borderRadius: '9999px' }, // Morphs to circle
+              },
+              redPulse: {
+                '0%': { boxShadow: '0 0 0 0 rgba(244, 63, 94, 0.7)' },
+                '70%': { boxShadow: '0 0 0 20px rgba(244, 63, 94, 0)' },
+                '100%': { boxShadow: '0 0 0 0 rgba(244, 63, 94, 0)' },
+              },
+              pinDrop: {
+                '0%': { transform: 'translateY(-50px) scale(0)', opacity: '0' },
+                '50%': { transform: 'translateY(0) scale(1.2)', opacity: '1' },
+                '100%': { transform: 'translateY(0) scale(1)', opacity: '1' },
+              },
+              bounceClick: {
+                '0%': { transform: 'scale(1)' },
+                '40%': { transform: 'scale(0.8)' },
+                '70%': { transform: 'scale(1.15)' },
+                '100%': { transform: 'scale(1)' },
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      body {
+        background-color: #09090b;
+        color: white;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      .glass-base {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .glass-card {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
+      }
+      .glass-input {
+        background: rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+      }
+      /* Staggered Animation Helper */
+      .stagger-1 { animation-delay: 50ms; }
+      .stagger-2 { animation-delay: 100ms; }
+      .stagger-3 { animation-delay: 150ms; }
+      .stagger-4 { animation-delay: 200ms; }
+      .stagger-5 { animation-delay: 250ms; }
+
+      /* Confetti Burst Logic */
+      .confetti {
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background: #f97316;
+        animation: confettiDrop 1s ease-out forwards;
+      }
+      @keyframes confettiDrop {
+        0% { transform: translateY(0) rotate(0); opacity: 1; }
+        100% { transform: translateY(100px) rotate(720deg); opacity: 0; }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.40.0",
+    "react-dom": "https://esm.sh/react-dom@^19.2.4"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
